@@ -1,0 +1,76 @@
+openapi: "3.0.0"
+info:
+  title: tshirt store api
+  description: LCO - a course to create api for ecom store
+  version: 1.1.0
+  contact:
+    email: 7thejunkmail@gmail.com
+    url: "https://lco.dev"
+
+# servers:
+#   - url: "https://localhost:4000/api/v1"
+#     description: for local host -secure
+#   - url: "http://localhost:4000/api/v1"
+#     description: for local host -regular
+
+servers:
+  - url: "{protocol}://localhost:4000/api/{versions}"
+    description: for local host -secure
+    variables:
+      versions:
+        enum:
+          - v1
+          - v2
+        default: v1
+      protocol:
+        enum:
+          - http
+          - https
+        default: http
+
+components:
+  securitySchemes:
+    cookieAuth: 
+      type: apiKey
+      in: cookie
+      name: token
+    BearerAuth:
+      type: http
+      scheme: bearer
+
+paths:
+  /:
+    get:
+      tags:
+        - Home
+      summary: returns a greet message from API
+      responses:
+        200:
+          description: All good and sucess
+          content:
+            application/json:
+              schema:
+                type: string
+                example: "mystring"
+        400:
+          description: Bad request
+        500:
+          description: Internal server error
+
+  /dummy:
+    get:
+      tags:
+        - Home
+      summary: returns a greet message from Dummy home page
+      responses:
+        200:
+          description: All good and sucess
+          content:
+            application/json:
+              schema:
+                type: string
+                example: "mystring"
+        400:
+          description: Bad request
+        500:
+          description: Internal server error

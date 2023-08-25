@@ -1,0 +1,54 @@
+first installed dependencies
+then dotenv ma port set
+then app ma express required & exported app 
+then app.listen in index file & require('dotenv').config() in both index and app files; 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Now router part
+routers are created in controller folders
+u need to export this and there are so many ways to exports...
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Now routes part
+require express and create router via requiring in from express.Router
+
+const {home} = require('../controllers/homeController')
+router.route('/').get(home);
+
+were home is functinallity in controller 
+whenever someone hits / with get the home functinallity written in controller should execute
+But this possible via using middleware only
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+bring all the routes in app.js
+dont bring controllers that will go in routes
+and also do middleware part
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+How forgot password workd??
+    u make req => via sending mail.
+    first we check if the user is registered in database or not.
+    if yes we create a method tokenGen() (Token generation) & it creates token and is send to user and databse.
+    user will send this token in url i guess.
+    in backend check for expiry...
+    and check if both are same then we allow user to change password.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+now we required morgan it should be always before u use anything of app like app.listen
+middleware of morgan use. then
+for morgan stop server and restart again
+morgan gives us time and request made on which apis.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Now create a bigpromise so that we can wrap our functionalities around them..
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+mostly verifying user and forgot password logic works same. 
+first generate token and send it to both database and user then next come user request which has token in it then we verify it with database and done.
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
