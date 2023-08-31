@@ -25,10 +25,10 @@ Dependencies used are :- <br />
    &nbsp;&nbsp;&nbsp;&nbsp; "yamljs"<br />
 
 Roles : <br />
-   &nbsp;&nbsp;&nbsp;&nbsp; Admin: Administrators hold the power to create, delete, update, and view all products within the T-shirt store. This role ensures complete   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   control over product management.<br />
+   &nbsp;&nbsp;&nbsp;&nbsp; Admin: Administrators hold the power to create, delete, update, and view all products within the T-shirt store. This role ensures complete   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;control over product management.<br />
   &nbsp;&nbsp;&nbsp;&nbsp; User: Users are granted the ability to view and search for products, making it easy to find and explore the T-shirt store's offerings.<br /><br /><br />
 
-👽 These routes has middleware which mostly checks two things : firstly most of the routes are accessible only to logged in users. And secondly   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  most of the GET / POST routes and all of the PUT, DELETE routes requires user to be as admin. <br /><br />
+👽 These routes has middleware which mostly checks two things : firstly most of the routes are accessible only to logged in users. And &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;secondly most of the GET / POST routes and all of the PUT, DELETE routes requires user to be as admin. <br /><br />
 
 Routes :<br />
 
