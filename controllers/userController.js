@@ -9,16 +9,20 @@ const crypto = require('crypto')
 
 exports.signup = BigPromise(async (req,res,next) =>{
 
+
     const {name,email,password} = req.body
+
 
     if(!email || !name || !password){
         return next(new CustomError('Name, email, password are required',400)) 
         // return next(new Error('Please send email')) // this is an default error class which does not accept code just a message.
     }
 
+
     if(!req.files){
        return next(new CustomError('photo is required for signup',400)) 
     }
+
 
     let file = req.files.photo // make sure in frontend to name it as photo only
     const result = await cloudinary.v2.uploader.upload(file.tempFilePath,{
@@ -26,6 +30,7 @@ exports.signup = BigPromise(async (req,res,next) =>{
         width : 150,
         crop : "scale"
     })
+
 
     const user = await User.create({
         name,
@@ -37,6 +42,7 @@ exports.signup = BigPromise(async (req,res,next) =>{
         }
     })
 
+    
     cookieToken(user,res);
 });
 
